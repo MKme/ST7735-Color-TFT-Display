@@ -13,3 +13,4 @@ ST7735 128X128 SPI Display Code &amp; Projects
 | RST  | D9  |
 | CS   | D10 |
 |GND   | GND |
+|VCC  | 3.3 or 5V depending on your display  |
