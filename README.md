@@ -3,6 +3,8 @@ ST7735 128X128 SPI Display Code &amp; Projects
 1.44" 128x128 Color TFT Display code and my notes
 Examples using both the Adafruit Libraries and the Arduino built-in TFT library
 
+Buy the display here: https://amzn.to/2NBFCGl
+
 
 More videos and information at http://youtube.com/mkmeorg or http://www.mkme.org
 
@@ -22,12 +24,15 @@ More videos and information at http://youtube.com/mkmeorg or http://www.mkme.org
 ### Useful Commands When Using Adafruit Library
 
 Rotate Display:
+
 tft.setRotation(tft.getRotation()+1);
 
 Fill Screen Black:
+
 tft.fillScreen(ST77XX_BLACK);
 
 Test wrapping on/off:
+
 tft.setTextWrap(false);
 
 Print Text/numbers various colors:
@@ -44,7 +49,9 @@ Print Text/numbers various colors:
   tft.setTextColor(ST77XX_BLUE);
   
 Draw Lines:
+
 tft.drawLine(tft.width()-1, 0, 0, y, color);
 
 Invert Display colors:
+
 tft.invertDisplay(true);
