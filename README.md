@@ -1,5 +1,5 @@
 # ST7735-LCD
-ST7735 128X128 SPI Display Code &amp; Projects
+Eric's ST7735 128X128 SPI Display Code &amp; Projects
 1.44" 128x128 Color TFT Display code and my notes
 Examples using both the Adafruit Libraries and the Arduino built-in TFT library
 Install the Adafruit GFX library and the Adafruit ST7735 library in library manager within the Arduino IDE.
