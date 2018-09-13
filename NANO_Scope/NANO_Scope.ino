@@ -1,19 +1,10 @@
 /***************************************************
- * ERICS NOTE!!!!!!!!!!!
- * I have not finished this nor does it work.  
- * Bars are off screen and plot is screwy
- * I hate it right now so I'm done
- * 
- * 
- * 
- * 
- * 
- * 
+My port of the simple scope I did on Nokia 5110 now coded for use on the 128X128 ST7735 full color SPI LCD Display
+Screen shows a simple plot of voltage (A0) over time.
+
  *  
- * tutorial
- * https://learn.adafruit.com/adafruit-1-44-color-tft-with-micro-sd-socket/wiring-and-test
- * GFX Tutorial: https://learn.adafruit.com/adafruit-gfx-graphics-library
  * 
+ *
  * Pins
  * LED 3.3 or 5V depending on your display
  * SCK D13
@@ -23,26 +14,8 @@
  * CS D10
  * GND GND
  * VCC 3.3 or 5V depending on your display
-  This is a library for the Adafruit 1.8" SPI display.
 
-This library works with the Adafruit 1.8" TFT Breakout w/SD card
-  ----> http://www.adafruit.com/products/358
-The 1.8" TFT shield
-  ----> https://www.adafruit.com/product/802
-The 1.44" TFT breakout
-  ----> https://www.adafruit.com/product/2088
-as well as Adafruit raw 1.8" TFT display
-  ----> http://www.adafruit.com/products/618
 
-  Check out the links above for our tutorials and wiring diagrams
-  These displays use SPI to communicate, 4 or 5 pins are required to
-  interface (RST is optional)
-  Adafruit invests time and resources providing this open source code,
-  please support Adafruit and open-source hardware by purchasing
-  products from Adafruit!
-
-  Written by Limor Fried/Ladyada for Adafruit Industries.
-  MIT license, all text above must be included in any redistribution
  ****************************************************/
 
 #include <Adafruit_GFX.h>    // Core graphics library
@@ -76,17 +49,17 @@ Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS,  TFT_DC, TFT_RST);  //<-----------
 
 int channelAI = A0;      // probe
 int delayAI = A1;       // delay potentiometer
-float delayVariable =5; // 10 seems good for decent update- bit fast
+float delayVariable =10; // 10 seems good for decent update- bit fast
 float scale = 0;
 int xCounter = 0;
 int yPosition = 0;
-int readings[85];
+int readings[112];
 int counter = 0;
 
 
 void setup(void) {
   Serial.begin(9600);
-  Serial.print("Hello! ST77xx TFT Test");
+  
 
   // Use this initializer if you're using a 1.8" TFT
   //tft.initR(INITR_BLACKTAB);   // initialize a ST7735S chip, black tab
@@ -102,18 +75,8 @@ void setup(void) {
 
   tft.fillScreen(ST77XX_BLACK);
 
-
- 
-
-  // large block of text
-  tft.fillScreen(ST77XX_BLACK);
-
   
-// draw a single pixel
-  tft.drawPixel(10, 10, ST77XX_GREEN);
-  // Show the display buffer on the hardware.
-  // NOTE: You _must_ call display after making any drawing commands
-  // to make them visible on the display hardware!
+
   
   delay(2000);
  
@@ -127,12 +90,12 @@ void loop() {
   //display.setTextColor(WHITE);  
 //delayVariable = analogRead(delayAI);
   //delayVariable = (delayVariable/10);
-  scale = 47.0/1023.0; 
+  scale = 112.0/1023.0; //set this value to overall pixel and all below must match
   // commented out above delay items as no pot/encoder installed yet
   
   
   //record readings
-  for(xCounter = 0; xCounter < 85; xCounter += 1)
+  for(xCounter = 0; xCounter < 112; xCounter += 1)  
     {                                 
       yPosition = analogRead(channelAI);
       readings[xCounter] = (yPosition*scale);
@@ -142,18 +105,19 @@ void loop() {
  tft.fillScreen(ST77XX_BLACK);
 
   //Draw Voltage Ref Lines
-  tft.drawLine( 10, 0, 10, 47, ST77XX_GREEN);
-  tft.drawLine( 5, 47-(.166 *1023.0 * scale), 10, 47-(.166 *1023.0 * scale), ST77XX_GREEN);
-  tft.drawLine( 0, 47-(.33 *1023.0 * scale), 10, 47-(.33 *1023.0 * scale), ST77XX_GREEN);
-  tft.drawLine( 5, 47-(.5 *1023.0 * scale), 10, 47-(.5 *1023.0 * scale), ST77XX_GREEN);
-  tft.drawLine( 0, 47-(.66 *1023.0 * scale), 10, 47-(.66 *1023.0 * scale), ST77XX_GREEN);
-  tft.drawLine( 5, 47-(.84 *1023.0 * scale), 10, 47-(.84 *1023.0 * scale), ST77XX_GREEN);
+  tft.drawLine( 10, 0, 10, 112, ST77XX_GREEN);
+  tft.drawLine( 5, 112-(.166 *1023.0 * scale), 10, 112-(.166 *1023.0 * scale), ST77XX_GREEN);
+  tft.drawLine( 0, 112-(.33 *1023.0 * scale), 10, 112-(.33 *1023.0 * scale), ST77XX_GREEN);
+  tft.drawLine( 5, 112-(.5 *1023.0 * scale), 10, 112-(.5 *1023.0 * scale), ST77XX_GREEN);
+  tft.drawLine( 0, 112-(.66 *1023.0 * scale), 10, 112-(.66 *1023.0 * scale), ST77XX_GREEN);
+  tft.drawLine( 5, 112-(.84 *1023.0 * scale), 10, 112-(.84 *1023.0 * scale), ST77XX_GREEN);
 
-  for(xCounter = 0; xCounter < 100; xCounter += 1)
+  for(xCounter = 0; xCounter < 112; xCounter += 1)
     {
-       tft.drawPixel(xCounter, 47-readings[xCounter], ST77XX_GREEN);
+       tft.drawPixel(xCounter, 112-readings[xCounter], ST77XX_GREEN);
+       delay(10);
        if(xCounter>1){
-         tft.drawLine(xCounter-1, 47-readings[xCounter-1], xCounter, 47-readings[xCounter], ST77XX_GREEN);
+         tft.drawLine(xCounter-1, 112-readings[xCounter-1], xCounter, 112-readings[xCounter], ST77XX_GREEN);
            
        }
     }
