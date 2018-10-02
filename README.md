@@ -8,7 +8,7 @@ Buy the display here: https://amzn.to/2NBFCGl
 
 More videos and information at http://youtube.com/mkmeorg or http://www.mkme.org
 
-### Wiring For 5110 to Arduino Nano
+### Wiring to Arduino Nano
 | Pin On LCD | Pin on NANO |
 | ---------- |----------------|
 | LED  | 3.3 or 5V depending on your display  |
