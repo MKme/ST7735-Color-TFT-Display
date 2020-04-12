@@ -1,14 +1,18 @@
 # Eric's ST7735-TFT-Display Code & Projects
- <p align="center"><img src="https://github.com/MKme/face-shield/blob/master/Photos/3.jpg"/>
+ <p align="center"><img src="https://github.com/MKme/ST7735-Color-TFT-Display/pics/1.png"/>
 Eric's ST7735 128X128 SPI Display Code &amp; Projects
 1.44" 128x128 Color TFT Display code and my notes
 Examples using both the Adafruit Libraries and the Arduino built-in TFT library
 Install the Adafruit GFX library and the Adafruit ST7735 library in library manager within the Arduino IDE.
-  <br>
-<br>๐ฆ <a href="https://twitter.com/mkmeorg">Twitter</a>
-| ๐“บ <a href="https://www.youtube.com/mkmeorg">YouTube</a>
-| ๐ <a href="http://www.mkme.org">mkme.org</a><br>
-
+br>
+<br>
+🐦 <a href="https://twitter.com/mkmeorg">Twitter</a>
+| 📺 <a href="https://www.youtube.com/mkmeorg">YouTube</a>
+| 🌍 <a href="http://www.mkme.org">mkme.org</a><br>
+Support this project and become a patron on <a href="http://mkme.org/patreon">Eric's Patreon</a>.<br>
+Website, Forum and store are at http://mkme.org <br>
+Chat with Me: <a href="https://discord.gg/j9S4Fgv">Discord</a></b>
+</p>
 Support this project and become a patron on <a href="http://mkme.org/patreon">Eric's Patreon</a>.<br>
 Website, Forum and store are at http://mkme.org <br>
 Chat with Me: <a href="https://discord.gg/j9S4Fgv">Discord</a></b>
