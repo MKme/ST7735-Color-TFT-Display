@@ -1,10 +1,8 @@
 # Eric's ST7735-TFT-Display Code & Projects
 <p align="center">
-<b>Eric's ST7735-TFT-Display Code & Projects</b><br>
 <br>
  <img src="https://github.com/MKme/ST7735-Color-TFT-Display/blob/master/Pics/1.PNG" width="700"/>
  <br>
-Eric's ST7735 128X128 SPI Display Code &amp; Projects
 1.44" 128x128 Color TFT Display code and my notes
 Examples using both the Adafruit Libraries and the Arduino built-in TFT library
 Install the Adafruit GFX library and the Adafruit ST7735 library in library manager within the Arduino IDE.
@@ -31,9 +29,11 @@ TBD
 
 Buy the display here: https://amzn.to/2NBFCGl
 
+More options: https://amzn.to/3cahIua
+
 More videos and information at http://youtube.com/mkmeorg or http://www.mkme.org
 
-### Wiring to Arduino Nano
+### Wiring to Arduino (Nano)
 | Pin On LCD | Pin on NANO |
 | ---------- |----------------|
 | LED  | 3.3 or 5V depending on your display  |
