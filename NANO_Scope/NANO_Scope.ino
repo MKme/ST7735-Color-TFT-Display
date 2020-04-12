@@ -49,7 +49,7 @@ Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS,  TFT_DC, TFT_RST);  //<-----------
 
 int channelAI = A0;      // probe
 int delayAI = A1;       // delay potentiometer
-float delayVariable =10; // 10 seems good for decent update- bit fast
+float delayVariable =0; // 10 seems good for decent update- bit fast
 float scale = 0;
 int xCounter = 0;
 int yPosition = 0;
@@ -82,7 +82,13 @@ void setup(void) {
  
 
 tft.setRotation(tft.getRotation()+1);
-
+  //Draw Voltage Ref Lines
+  tft.drawLine( 10, 0, 10, 112, ST77XX_GREEN);
+  tft.drawLine( 5, 112-(.166 *1023.0 * scale), 10, 112-(.166 *1023.0 * scale), ST77XX_GREEN);
+  tft.drawLine( 0, 112-(.33 *1023.0 * scale), 10, 112-(.33 *1023.0 * scale), ST77XX_GREEN);
+  tft.drawLine( 5, 112-(.5 *1023.0 * scale), 10, 112-(.5 *1023.0 * scale), ST77XX_GREEN);
+  tft.drawLine( 0, 112-(.66 *1023.0 * scale), 10, 112-(.66 *1023.0 * scale), ST77XX_GREEN);
+  tft.drawLine( 5, 112-(.84 *1023.0 * scale), 10, 112-(.84 *1023.0 * scale), ST77XX_GREEN);
   
 }
 
@@ -104,18 +110,12 @@ void loop() {
   
  tft.fillScreen(ST77XX_BLACK);
 
-  //Draw Voltage Ref Lines
-  tft.drawLine( 10, 0, 10, 112, ST77XX_GREEN);
-  tft.drawLine( 5, 112-(.166 *1023.0 * scale), 10, 112-(.166 *1023.0 * scale), ST77XX_GREEN);
-  tft.drawLine( 0, 112-(.33 *1023.0 * scale), 10, 112-(.33 *1023.0 * scale), ST77XX_GREEN);
-  tft.drawLine( 5, 112-(.5 *1023.0 * scale), 10, 112-(.5 *1023.0 * scale), ST77XX_GREEN);
-  tft.drawLine( 0, 112-(.66 *1023.0 * scale), 10, 112-(.66 *1023.0 * scale), ST77XX_GREEN);
-  tft.drawLine( 5, 112-(.84 *1023.0 * scale), 10, 112-(.84 *1023.0 * scale), ST77XX_GREEN);
+
 
   for(xCounter = 0; xCounter < 112; xCounter += 1)
     {
        tft.drawPixel(xCounter, 112-readings[xCounter], ST77XX_GREEN);
-       delay(10);
+      // delay(10);
        if(xCounter>1){
          tft.drawLine(xCounter-1, 112-readings[xCounter-1], xCounter, 112-readings[xCounter], ST77XX_GREEN);
            
