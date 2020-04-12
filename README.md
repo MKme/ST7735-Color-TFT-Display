@@ -3,6 +3,7 @@
 <b>Eric's ST7735-TFT-Display Code & Projects</b><br>
 <br>
  <img src="https://github.com/MKme/ST7735-Color-TFT-Display/blob/master/Pics/1.PNG" width="700"/>
+ <br>
 Eric's ST7735 128X128 SPI Display Code &amp; Projects
 1.44" 128x128 Color TFT Display code and my notes
 Examples using both the Adafruit Libraries and the Arduino built-in TFT library
