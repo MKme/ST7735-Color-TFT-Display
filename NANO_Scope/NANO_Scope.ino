@@ -83,12 +83,7 @@ void setup(void) {
 
 tft.setRotation(tft.getRotation()+1);
   //Draw Voltage Ref Lines
-  tft.drawLine( 10, 0, 10, 112, ST77XX_GREEN);
-  tft.drawLine( 5, 112-(.166 *1023.0 * scale), 10, 112-(.166 *1023.0 * scale), ST77XX_GREEN);
-  tft.drawLine( 0, 112-(.33 *1023.0 * scale), 10, 112-(.33 *1023.0 * scale), ST77XX_GREEN);
-  tft.drawLine( 5, 112-(.5 *1023.0 * scale), 10, 112-(.5 *1023.0 * scale), ST77XX_GREEN);
-  tft.drawLine( 0, 112-(.66 *1023.0 * scale), 10, 112-(.66 *1023.0 * scale), ST77XX_GREEN);
-  tft.drawLine( 5, 112-(.84 *1023.0 * scale), 10, 112-(.84 *1023.0 * scale), ST77XX_GREEN);
+
   
 }
 
@@ -99,7 +94,12 @@ void loop() {
   scale = 112.0/1023.0; //set this value to overall pixel and all below must match
   // commented out above delay items as no pot/encoder installed yet
   
-  
+    tft.drawLine( 10, 0, 10, 112, ST77XX_GREEN);
+  tft.drawLine( 5, 112-(.166 *1023.0 * scale), 10, 112-(.166 *1023.0 * scale), ST77XX_GREEN);
+  tft.drawLine( 0, 112-(.33 *1023.0 * scale), 10, 112-(.33 *1023.0 * scale), ST77XX_GREEN);
+  tft.drawLine( 5, 112-(.5 *1023.0 * scale), 10, 112-(.5 *1023.0 * scale), ST77XX_GREEN);
+  tft.drawLine( 0, 112-(.66 *1023.0 * scale), 10, 112-(.66 *1023.0 * scale), ST77XX_GREEN);
+  tft.drawLine( 5, 112-(.84 *1023.0 * scale), 10, 112-(.84 *1023.0 * scale), ST77XX_GREEN);
   //record readings
   for(xCounter = 0; xCounter < 112; xCounter += 1)  
     {                                 
