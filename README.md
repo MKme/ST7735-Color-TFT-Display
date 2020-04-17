@@ -20,11 +20,14 @@ Website, Forum and store are at http://mkme.org <br>
 Chat with Me: <a href="https://discord.gg/j9S4Fgv">Discord</a></b>
 </p>
 
-### Overview Video (short):
-TBD
+### Discussion and further info I figure out (if any):
+
+http://mkme.org/forum/viewtopic.php?f=2&p=1428#p1428
 
 ### FULL Video Tutorial:
-TBD
+
+https://www.youtube.com/watch?v=7JBulQ3gaoc
+
 ### BUY THE SUPPLIES HERE:
 
 Buy the display here: https://amzn.to/2NBFCGl
